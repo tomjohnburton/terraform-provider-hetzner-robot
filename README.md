@@ -1,3 +1,4 @@
+[![release](https://github.com/Peters-IT/terraform-provider-hetzner-robot/actions/workflows/release.yml/badge.svg)](https://github.com/Peters-IT/terraform-provider-hetzner-robot/actions/workflows/release.yml)
 # background to this fork
 
 Initial found this via terraform (https://registry.terraform.io/providers/mwudka/hetznerrobot/latest) and here in github
@@ -31,4 +32,5 @@ Feel free to submit merge/pull requests.
 
 ```
 go mod vendor
+make
 ```
