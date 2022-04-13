@@ -1,15 +1,20 @@
 terraform {
   required_providers {
-    hetznerrobot = {
-      version = "0.0.1"
-      source  = "github.com/mwudka/hetznerrobot"
+    hetzner-robot = {
+      version = "0.1.0"
+      source  = "github.com/peters-it/hetzner-robot"
     }
   }
 
 }
 
+provider "hetzner-robot" {
+  username = "yourUserNameFromRobot"
+  password = "yourPasswordFromRobot"
+}
+
 resource "hetznerrobot_firewall" "firewall" {
-  server_ip     = "95.216.6.55"
+  server_ip     = "1.1.1.1"
   active        = true
   whitelist_hos = true
 
@@ -19,7 +24,8 @@ resource "hetznerrobot_firewall" "firewall" {
     src_port = "0-65535"
     dst_ip   = "0.0.0.0/0"
     dst_port = "22"
-    protocol = "tcp"
+    protocol  = "tcp"
+    tcp_flags= ""
     action   = "accept"
   }
 
