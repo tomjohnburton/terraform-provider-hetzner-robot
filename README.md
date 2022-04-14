@@ -2,7 +2,7 @@
 # background to this fork
 
 Initial found this via terraform (https://registry.terraform.io/providers/mwudka/hetznerrobot/latest) and here in github
-at https://github.com/peters-it/terraform-provider-hetzner-robot, but it seems but unfortunately it looks like it is no
+at https://github.com/mwudka/terraform-provider-hetznerrobot, but it seems unfortunately it looks like it is no
 longer maintained. As you can see, I have again made a fork of what I consider to be good improvements and new features
 from https://github.com/SLoeuillet/terraform-provider-hetznerrobot.
 
@@ -19,18 +19,19 @@ Feel free to submit merge/pull requests.
 
 # dependencies / tested with
 
-- go 1.17.x
+- go 1.17.9
   - https://go.dev/dl/#go1.17.9
     - ``wget https://go.dev/dl/go1.17.9.linux-amd64.tar.gz``
     - ``rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.9.linux-amd64.tar.gz``
     - ``export PATH=$PATH:/usr/local/go/bin``
 - terraform 1.1.8
   - https://www.terraform.io/downloads
-- make
 
 # build
+## local
+```
+goreleaser release --snapshot --skip-sign --rm-dist
+```
 
-```
-go mod vendor
-make
-```
+## github
+works with github action and goreleaser/action automatically at each new tag
