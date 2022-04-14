@@ -2,7 +2,7 @@ terraform {
   required_providers {
     hetzner-robot = {
       version = "0.1.0"
-      source  = "github.com/peters-it/hetzner-robot"
+      source  = "peters-it/hetzner-robot"
     }
   }
 
@@ -25,7 +25,8 @@ resource "hetznerrobot_firewall" "firewall" {
     dst_ip   = "0.0.0.0/0"
     dst_port = "22"
     protocol  = "tcp"
-    tcp_flags= ""
+    #example can be one of syn, fin, rst, psh, urg or more like "syn|fin"
+    tcp_flags= "syn"
     action   = "accept"
   }
 

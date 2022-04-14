@@ -1,4 +1,7 @@
-[![release](https://github.com/Peters-IT/terraform-provider-hetzner-robot/actions/workflows/release.yml/badge.svg)](https://github.com/Peters-IT/terraform-provider-hetzner-robot/actions/workflows/release.yml)
+# provider documentation
+
+[terraform documentation](docs/index.md)
+
 # background to this fork
 
 Initial found this via terraform (https://registry.terraform.io/providers/mwudka/hetznerrobot/latest) and here in github
