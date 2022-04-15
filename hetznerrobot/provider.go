@@ -21,9 +21,9 @@ func Provider() *schema.Provider {
 				DefaultFunc: schema.EnvDefaultFunc("HETZNERROBOT_PASSWORD", nil),
 			},
 			"url": {
-				Type:     schema.TypeString,
-				Optional: true,
-				Default:  schema.EnvDefaultFunc("HETZNERROBOT_URL", "https://robot-ws.your-server.de"),
+				Type:        schema.TypeString,
+				Optional:    true,
+				DefaultFunc: schema.EnvDefaultFunc("HETZNERROBOT_URL", "https://robot-ws.your-server.de"),
 			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
