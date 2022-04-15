@@ -58,12 +58,12 @@ func dataSourceVSwitchRead(d *schema.ResourceData, meta interface{}) error {
 		return fmt.Errorf("Unable to find VSwitch with ID %d:\n\t %q", vSwitchID, err)
 	}
 
-	d.Set("name", vSwitch.name)
-	d.Set("vlan", vSwitch.vlan)
-	d.Set("is_cancelled", vSwitch.isCancelled)
-	d.Set("servers", vSwitch.server)
-	d.Set("subnets", vSwitch.subnet)
-	d.Set("cloud_networks", vSwitch.cloudNetwork)
+	d.Set("name", vSwitch.Name)
+	d.Set("vlan", vSwitch.Vlan)
+	d.Set("is_cancelled", vSwitch.IsCancelled)
+	d.Set("servers", vSwitch.Server)
+	d.Set("subnets", vSwitch.Subnet)
+	d.Set("cloud_networks", vSwitch.CloudNetwork)
 	d.SetId(strconv.Itoa(vSwitchID))
 
 	return nil

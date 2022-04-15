@@ -69,13 +69,13 @@ func resourceVSwitchImportState(d *schema.ResourceData, meta interface{}) ([]*sc
 		return nil, fmt.Errorf("Unable to find VSwitch with ID %d:\n\t %q", vSwitchID, err)
 	}
 
-	d.Set("name", vSwitch.name)
-	d.Set("vlan", vSwitch.vlan)
-	d.Set("is_cancelled", vSwitch.isCancelled)
-	d.Set("servers", vSwitch.server)
-	d.Set("subnets", vSwitch.subnet)
-	d.Set("cloud_networks", vSwitch.cloudNetwork)
-	d.SetId(strconv.Itoa(vSwitchID))
+	d.Set("name", vSwitch.Name)
+	d.Set("vlan", vSwitch.Vlan)
+	d.Set("is_cancelled", vSwitch.IsCancelled)
+	d.Set("servers", vSwitch.Server)
+	d.Set("subnets", vSwitch.Subnet)
+	d.Set("cloud_networks", vSwitch.CloudNetwork)
+	d.Set("id", vSwitchID)
 
 	results := make([]*schema.ResourceData, 1)
 	results[0] = d
@@ -92,11 +92,11 @@ func resourceVSwitchCreate(ctx context.Context, d *schema.ResourceData, meta int
 		return diag.FromErr(fmt.Errorf("Unable to create VSwitch :\n\t %q", err))
 	}
 
-	d.Set("is_cancelled", vSwitch.isCancelled)
-	d.Set("servers", vSwitch.server)
-	d.Set("subnets", vSwitch.subnet)
-	d.Set("cloud_networks", vSwitch.cloudNetwork)
-	d.SetId(strconv.Itoa(vSwitch.id))
+	d.Set("is_cancelled", vSwitch.IsCancelled)
+	d.Set("servers", vSwitch.Server)
+	d.Set("subnets", vSwitch.Subnet)
+	d.Set("cloud_networks", vSwitch.CloudNetwork)
+	d.Set("id", vSwitch.Id)
 
 	// Warning or errors can be collected in a slice type
 	var diags diag.Diagnostics
@@ -113,13 +113,13 @@ func resourceVSwitchRead(ctx context.Context, d *schema.ResourceData, meta inter
 		return diag.FromErr(fmt.Errorf("Unable to find VSwitch with ID %d:\n\t %q", vSwitchID, err))
 	}
 
-	d.Set("name", vSwitch.name)
-	d.Set("vlan", vSwitch.vlan)
-	d.Set("cancelled", vSwitch.isCancelled)
-	d.Set("servers", vSwitch.server)
-	d.Set("subnets", vSwitch.subnet)
-	d.Set("cloud_networks", vSwitch.cloudNetwork)
-	d.SetId(strconv.Itoa(vSwitchID))
+	d.Set("name", vSwitch.Name)
+	d.Set("vlan", vSwitch.Vlan)
+	d.Set("cancelled", vSwitch.IsCancelled)
+	d.Set("servers", vSwitch.Server)
+	d.Set("subnets", vSwitch.Subnet)
+	d.Set("cloud_networks", vSwitch.CloudNetwork)
+	d.Set("id", vSwitchID)
 
 	// Warning or errors can be collected in a slice type
 	var diags diag.Diagnostics
@@ -138,10 +138,10 @@ func resourceVSwitchUpdate(ctx context.Context, d *schema.ResourceData, meta int
 		return diag.FromErr(fmt.Errorf("Unable to update VSwitch :\n\t %q", err))
 	}
 
-	d.Set("is_cancelled", vSwitch.isCancelled)
-	d.Set("servers", vSwitch.server)
-	d.Set("subnets", vSwitch.subnet)
-	d.Set("cloud_networks", vSwitch.cloudNetwork)
+	d.Set("is_cancelled", vSwitch.IsCancelled)
+	d.Set("servers", vSwitch.Server)
+	d.Set("subnets", vSwitch.Subnet)
+	d.Set("cloud_networks", vSwitch.CloudNetwork)
 
 	// Warning or errors can be collected in a slice type
 	var diags diag.Diagnostics

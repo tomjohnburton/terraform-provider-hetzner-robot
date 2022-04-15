@@ -36,7 +36,7 @@ func dataSourceServerVSwitchRead(d *schema.ResourceData, meta interface{}) error
 	}
 
 	found := false
-	for lServerID := range vSwitch.server {
+	for lServerID := range vSwitch.Server {
 		if lServerID == serverID {
 			found = true
 		}

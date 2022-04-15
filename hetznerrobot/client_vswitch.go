@@ -14,13 +14,13 @@ import (
 // https://robot.your-server.de/doc/webservice/en.html#vswitch
 
 type TVSwitchResponse struct {
-	id           int                             `json:"id"`
-	name         string                          `json:"string"`
-	vlan         int                             `json:"vlan"`
-	isCancelled  bool                            `json:"cancelled"`
-	server       []TVSwitchServersResponse       `json:"server"`
-	subnet       []TVSwitchSubnetsResponse       `json:"subnet"`
-	cloudNetwork []TVSwitchCloudNetworksResponse `json:"cloud_network"`
+	Id           int                             `json:"id"`
+	Name         string                          `json:"string"`
+	Vlan         int                             `json:"vlan"`
+	IsCancelled  bool                            `json:"cancelled"`
+	Server       []TVSwitchServersResponse       `json:"server"`
+	Subnet       []TVSwitchSubnetsResponse       `json:"subnet"`
+	CloudNetwork []TVSwitchCloudNetworksResponse `json:"cloud_network"`
 }
 
 type TVSwitchServersResponse struct {

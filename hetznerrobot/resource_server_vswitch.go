@@ -77,7 +77,7 @@ func resourceServerVSwitchRead(ctx context.Context, d *schema.ResourceData, meta
 	}
 
 	found := false
-	for lServerID := range vSwitch.server {
+	for lServerID := range vSwitch.Server {
 		if lServerID == serverID {
 			found = true
 		}
