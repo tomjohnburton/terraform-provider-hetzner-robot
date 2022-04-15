@@ -17,8 +17,6 @@ Feel free to submit merge/pull requests.
 # features
 
 - firewall
-- vswitch
-- ssh-key
 
 # dependencies / tested with
 
