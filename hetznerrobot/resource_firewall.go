@@ -55,6 +55,10 @@ func resourceFirewall() *schema.Resource {
 							Type:     schema.TypeString,
 							Optional: true,
 						},
+						"tcp_flags": {
+							Type:     schema.TypeString,
+							Optional: true,
+						},
 						"action": {
 							Type:     schema.TypeString,
 							Required: true,
@@ -86,6 +90,7 @@ func resourceFirewallCreate(ctx context.Context, d *schema.ResourceData, m inter
 			DstIP:    ruleProperties["dst_ip"].(string),
 			DstPort:  ruleProperties["dst_port"].(string),
 			Protocol: ruleProperties["protocol"].(string),
+			TCPFlags: ruleProperties["tcp_flags"].(string),
 			Action:   ruleProperties["action"].(string),
 		})
 	}

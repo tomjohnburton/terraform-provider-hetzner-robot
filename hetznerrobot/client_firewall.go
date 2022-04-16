@@ -70,6 +70,9 @@ func (c *HetznerRobotClient) setFirewall(firewall HetznerRobotFirewall) error {
 		if rule.Protocol != "" {
 			formParams.Set(fmt.Sprintf("rules[input][%d][%s]", idx, "protocol"), rule.Protocol)
 		}
+		if rule.TCPFlags != "" {
+			formParams.Set(fmt.Sprintf("rules[input][%d][%s]", idx, "tcp_flags"), rule.TCPFlags)
+		}
 		formParams.Set(fmt.Sprintf("rules[input][%d][%s]", idx, "action"), rule.Action)
 	}
 
